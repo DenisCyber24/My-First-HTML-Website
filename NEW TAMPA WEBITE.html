@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My First HTML Page</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 20px;
+      background-color: #f5faff;
+      color: darkblue;
+    }
+    .header-section {
+      background-image: url("https://keysweekly.com/wp-content/uploads/2023/01/roseate-spoonbill.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      padding: 60px 40px;
+      text-align: center;
+      color: darkblue;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: limegreen;
+      margin-top: 0;
+    }
+    .header-section p {
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 0.9em;
+      line-height: 1.5;
+    }
+    .images-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 30px auto 10px; /* adds space from top and bottom */
+    }
+    .image-block {
+      text-align: center;
+    }
+    .images-container img {
+      width: 200px;
+      height: 300px;
+      object-fit: cover;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      display: block;
+      margin: 0 auto;
+    }
+    .alt-text {
+      font-size: 1.0em;
+      color: darkblue;
+      margin-top: 5px;
+      max-width: 200px;
+    }
+    .menu {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .menu a {
+      background-color: lightblue;
+      color: black;
+      text-decoration: none;
+      padding: 12px 20px;
+      margin: 10px;
+      border-radius: 6px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .menu a:hover {
+      background-color: #a6d4ff;
+    }
+    /* Gallery styles */
+    .gallery-section {
+      max-width: 900px;
+      margin: 40px auto;
+      text-align: center;
+    }
+    .gallery-section h2 {
+      color: limegreen;
+      margin-bottom: 20px;
+    }
+    .gallery-images {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .gallery-images img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-section">
+    <h1>My First HTML Page</h1>
+    <h2>WELCOME TO TAMPA FLORIDA</h2>
+    <p>
+      Tampa is a beautiful city on Tampa Bay, along Florida’s Gulf Coast. A major business center, 
+      it’s also known for its museums and other cultural offerings. Busch Gardens is an African-themed 
+      amusement park with thrill rides and animal-viewing areas. The historic Ybor City neighborhood, 
+      developed by Cuban and Spanish cigar-factory workers at the turn of the 20th century, is a dining 
+      and nightlife destination.
+    </p>
+  </div>
+
+  <div class="images-container">
+    <div class="image-block">
+      <img src="https://york.services.cloudsofttest.com/images/york-solutions/1000x-1.jpg" alt="Cruise ship in port" />
+      <p class="alt-text">Close-up of Fincantieri cruise ship in a port with yellow cranes visible behind the ship, on a green sea with a clear blue sky on the horizon</p>
+    </div>
+    <div class="image-block">
+      <img src="https://york.services.cloudsofttest.com/images/york-solutions/20200523_ASP005_0.jpg" alt="Cruise ship on sea" />
+      <p class="alt-text">Luxury cruiser ship sailing across a calm blue sea with several other vessels in the background and a faint city skyline on the horizon</p>
+    </div>
+  </div>
+
+  <div class="menu">
+    <a href="https://www.visittampabay.com" target="_blank">Visit Tampa Bay</a>
+    <a href="https://barefootcaribou.com/blogs/blog/golf-courses-in-tampa/" target="_blank">Best Golf Courses in Tampa</a>
+    <a href="https://en.wikipedia.org/wiki/Tampa,_Florida" target="_blank">Wikipedia</a>
+    <a href="https://www.visittampabay.com/things-to-do/food-drink/" target="_blank">Tampa Restaurant Scene</a>
+    <a href="https://www.stolenhistory.org/articles/ybor-city-tunnels-in-tampa.639/" target="_blank">Mysterious Secret Tunnels</a>
+    <!-- New Gallery link scrolling to section -->
+    <a href="#gallery-section">Gallery</a>
+  </div>
+
+  <!-- Gallery section -->
+  <div id="gallery-section" class="gallery-section">
+    <h2>My Photo Gallery</h2>
+    <div class="gallery-images">
+      <img src="images/photo1.jpg" alt="Photo 1" />
+      <img src="images/photo2.jpg" alt="Photo 2" />
+      <img src="images/photo3.jpg" alt="Photo 3" />
+      <!-- Add more images here -->
+    </div>
+  </div>
+
+</body>
+</html>
+
+  </div>
+
+</body>
+</html>
+
+
