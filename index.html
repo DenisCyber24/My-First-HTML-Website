@@ -5,36 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WELCOME TO TAMPA FLORIDA</title>
   <style>
-    .slideshow-container {
-  max-width: 600px;
-  position: relative;
-  margin: auto;
-}
-/* soft fade between slides */
-.slide { 
-    display: none; 
-    opacity: 0; 
-    transition: opacity 0.8s ease; 
-  }
-  .slide.show { 
-    display: block; 
-    opacity: 1; 
-  }
-
-  body {
-    font-family: Arial;
-    margin: 20px;
-    background-color: #f5faff;
-    color: darkblue;
-  }
-
-
-
-.slide img {
-  width: 100%;
-  border-radius: 8px;
-}
-
     body {
       font-family: Arial;
       margin: 20px;
@@ -132,8 +102,6 @@
       border-radius: 6px;
     }
   </style>
-  
-  
 </head>
 <body>
 
@@ -148,61 +116,7 @@
       and nightlife destination.
     </p>
   </div>
-  <div class="slideshow-container">
 
-    <!-- Cruisers -->
-    <div class="slide fade">
-      <img src="https://york.services.cloudsofttest.com/images/york-solutions/1000x-1.jpg" alt="Cruise ship in port">
-    </div>
-  
-    <div class="slide fade">
-      <img src="https://york.services.cloudsofttest.com/images/york-solutions/20200523_ASP005_0.jpg" alt="Cruise ship at sea">
-    </div>
-  
-    <!-- Your images in /Images -->
-    <div class="slide fade">
-      <img src="Images/HenryB.Plant_Museum.jpg" alt="Henry B. Plant Museum">
-    </div>
-  
-    <div class="slide fade">
-      <img src="Images/Clearwater_Beach.jpg" alt="Clearwater Beach">
-    </div>
-  
-    <div class="slide fade">
-      <img src="Images/(USF)on-campus stadium_Tampa_Stadium.jpg" alt="USF On-Campus Stadium (Tampa)">
-    </div>
-  
-    <div class="slide fade">
-      <img src="Images/SheratonGrand_Hiroshima_Hotel.jpg" alt="Sheraton Grand Hiroshima Hotel">
-    </div>
-  
-    <div class="slide fade">
-      <img src="Images/tampa_Bay-1.jpg" alt="Tampa Bay">
-    </div>
-  
-    <div class="slide fade">
-      <img src="Images/Tampa_Marriot_Hotel.jpg" alt="Tampa Marriott Hotel">
-    </div>
-  
-    <div class="slide fade">
-      <img src="Images/Tampa-2.jpg" alt="Tampa">
-    </div>
-  
-    <div class="slide fade">
-      <img src="Images/Tampa-Braodwalk.jpg" alt="Tampa Broadwalk">
-    </div>
-  
-    <div class="slide fade">
-      <img src="Images/Tampa-resort.jpg" alt="Tampa Resort">
-    </div>
-  
-    <div class="slide fade">
-      <img src="Images/US_Post_Offic_Courthouse_Tampa.jpg" alt="US Post Office & Courthouse, Tampa">
-    </div>
-  
-  </div>
-  
-<!--
   <div class="images-container">
     <div class="image-block">
       <img src="https://york.services.cloudsofttest.com/images/york-solutions/1000x-1.jpg" alt="Cruise ship in port" />
@@ -213,15 +127,15 @@
       <p class="alt-text">Luxury cruiser ship sailing across a calm blue sea with several other vessels in the background and a faint city skyline on the horizon</p>
     </div>
   </div>
--->
+
   <div class="menu">
     <a href="https://www.visittampabay.com" target="_blank">Visit Tampa Bay</a>
     <a href="https://barefootcaribou.com/blogs/blog/golf-courses-in-tampa/" target="_blank">Best Golf Courses in Tampa</a>
     <a href="https://en.wikipedia.org/wiki/Tampa,_Florida" target="_blank">Wikipedia</a>
     <a href="https://www.visittampabay.com/food-and-drink/" target="_blank">Tampa Restaurant Scene</a>
     <a href="https://www.stolenhistory.org/articles/ybor-city-tunnels-in-tampa.639/" target="_blank">Mysterious Secret Tunnels</a>
-   <a href="https://en.wikipedia.org/wiki/Henry_B._Plant_Museum" target="_blank">Plant Museum & Tampa Bay Hotel History</a>
-   
+    <!-- New Gallery link scrolling to section -->
+    <a href="#gallery-section">Gallery</a>
   </div>
   
 <!-- Gallery section -->
@@ -262,40 +176,17 @@
 
   </div>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.slideshow-container img').forEach(img => {
-    img.addEventListener('error', () => {
-      const slide = img.closest('.slide');
-      if (slide && slide.parentNode) slide.parentNode.removeChild(slide);
-    });
-  });
-});
-</script>
 
- <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const slides = Array.from(document.getElementsByClassName('slide'));
-  if (!slides.length) return;
-
-  let i = slides.findIndex(s => s.classList.contains('show'));
-  if (i === -1) { i = 0; slides[0].classList.add('show'); }
-
-  const INTERVAL_MS = 5000;
-
-  function next() {
-    slides[i].classList.remove('show');
-    i = (i + 1) % slides.length;
-    slides[i].classList.add('show');
-  }
-
-  setInterval(next, INTERVAL_MS);
-});
-</script>
-  </body>
+</body>
 </html>
 
-  
+
+
+
+
+
+
+
 
 
 
