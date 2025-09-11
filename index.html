@@ -291,8 +291,38 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(next, INTERVAL_MS);
 });
 </script>
-  </body>
+<script>
+(function(){
+  const urls = [
+    "henryb-plant-museum.jpg","clearwater-beach.jpg","usf-oncampus-stadium.jpg",
+    "sheraton-grand-hiroshima-hotel.jpg","tampa-bay-1.jpg","tampa-marriott-hotel.jpg",
+    "tampa-2.jpg","tampa-boardwalk.jpg","tampa-resort.jpg","us-post-office-courthouse-tampa.jpg"
+  ].map(f => "Images/" + f);
+
+  const missing = [];
+  let done = 0;
+  urls.forEach(u => {
+    const img = new Image();
+    img.onload = next;
+    img.onerror = () => { missing.push(u); next(); };
+    img.src = u + "?cachebust=" + Date.now();
+  });
+  function next(){
+    if(++done < urls.length) return;
+    if(!missing.length) return;
+    const box = document.createElement('div');
+    box.style = "position:fixed;bottom:10px;left:10px;background:#111;color:#fff;padding:10px;border-radius:8px;z-index:2000;font:14px/1.4 Arial";
+    box.innerHTML = "<b>Missing images:</b><br>" + missing.join("<br>");
+    document.body.appendChild(box);
+  }
+})();
+</script>
+
+</body>
 </html>
+
+  
+ 
 
 
 
@@ -303,6 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   
+
 
 
 
