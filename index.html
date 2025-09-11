@@ -264,29 +264,27 @@
 </div>
 
 <script>
- 
-  let slideIndex = 0;
-  const slides = document.getElementsByClassName("slide");
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = Array.from(document.getElementsByClassName('slide'));
+  if (!slides.length) return;
+
+  let i = slides.findIndex(s => s.classList.contains('show'));
+  if (i === -1) { i = 0; slides[0].classList.add('show'); }
+
   const INTERVAL_MS = 5000;
 
-  function showSlides() {
-    // remove .show from all slides
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].classList.remove('show');
-    }
-    // advance & show
-    slideIndex = (slideIndex % slides.length) + 1;
-    slides[slideIndex - 1].classList.add('show');
-
-    setTimeout(showSlides, INTERVAL_MS);
+  function next() {
+    slides[i].classList.remove('show');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('show');
   }
 
-  // init
-  if (slides.length) {
-    slides[0].classList.add('show'); // show first immediately
-    setTimeout(showSlides, INTERVAL_MS);
-  }
+  setInterval(next, INTERVAL_MS);
+});
+</script>
 
+  
   </script>
   
 
@@ -303,6 +301,7 @@
 
 
   
+
 
 
 
