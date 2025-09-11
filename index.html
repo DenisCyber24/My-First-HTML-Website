@@ -262,8 +262,17 @@
 
   </div>
 </div>
-
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.slideshow-container img').forEach(img => {
+    img.addEventListener('error', () => {
+      const slide = img.closest('.slide');
+      if (slide && slide.parentNode) slide.parentNode.removeChild(slide);
+    });
+  });
+});
+</script>
+
  <script>
 document.addEventListener('DOMContentLoaded', () => {
   const slides = Array.from(document.getElementsByClassName('slide'));
@@ -283,13 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(next, INTERVAL_MS);
 });
 </script>
-
-  
-  </script>
-  
-
-
-</body>
+  </body>
 </html>
 
 
@@ -301,6 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   
+
 
 
 
