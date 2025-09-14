@@ -218,6 +218,8 @@
 
   </div>
 </div>
+
+    
 <script>
   // Array of cruiser images
   const slides = [
@@ -242,7 +244,7 @@
   const capEl = document.getElementById("rotating-caption");
 
   let index = 0;
-  const DURATION_MS = 3000; // 3 seconds
+  const DURATION_MS = 3000; // 4 seconds
 
   function showSlide(i) {
     const slide = slides[i];
@@ -263,7 +265,7 @@
     im.src = s.src;
   });
 
-  // Auto-rotate every 3s
+  // Auto-rotate every 4s
   setInterval(() => {
     index = (index + 1) % slides.length;
     showSlide(index);
@@ -275,6 +277,7 @@
 
 </body>
 </html>
+
 
 
 
