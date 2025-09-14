@@ -5,6 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WELCOME TO TAMPA FLORIDA</title>
   <style>
+    .images-rotator {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 10px;
+}
+
+.rotator-frame {
+  text-align: center;
+}
+
+#rotating-image {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  opacity: 1;
+  transition: opacity 400ms ease-in-out;
+}
+
+/* this class will make the image fade out before switching */
+.fade-out {
+  opacity: 0;
+}
+
     body {
       font-family: Arial;
       margin: 20px;
@@ -116,7 +143,7 @@
       and nightlife destination.
     </p>
   </div>
-
+<!-- 
   <div class="images-container">
     <div class="image-block">
       <img src="https://york.services.cloudsofttest.com/images/york-solutions/1000x-1.jpg" alt="Cruise ship in port" />
@@ -127,7 +154,20 @@
       <p class="alt-text">Luxury cruiser ship sailing across a calm blue sea with several other vessels in the background and a faint city skyline on the horizon</p>
     </div>
   </div>
-
+ -->
+  <-- this is what rotates images -->
+<div class="images-rotator">
+  <figure class="rotator-frame">
+    <img id="rotating-image"
+         src="https://york.services.cloudsofttest.com/images/york-solutions/1000x-1.jpg"
+         alt="Cruise ship in port"
+         width="200" height="300" />
+    <figcaption id="rotating-caption" class="alt-text">
+      Close-up of Fincantieri cruise ship in a port with yellow cranes behind it.
+    </figcaption>
+  </figure>
+</div>
+  
   <div class="menu">
     <a href="https://www.visittampabay.com" target="_blank">Visit Tampa Bay</a>
     <a href="https://barefootcaribou.com/blogs/blog/golf-courses-in-tampa/" target="_blank">Best Golf Courses in Tampa</a>
@@ -176,15 +216,66 @@
       <p class="alt-text">Old Timers, Tampa ,1953</p>
     </div>
 
+  </div>
+</div>
+<script>
+  // Array of cruiser images
+  const slides = [
+    {
+      src: "https://york.services.cloudsofttest.com/images/york-solutions/1000x-1.jpg",
+      alt: "Cruise ship in port",
+      caption: "Close-up of Fincantieri cruise ship in a port with yellow cranes behind it."
+    },
+    {
+      src: "https://york.services.cloudsofttest.com/images/york-solutions/20200523_ASP005_0.jpg",
+      alt: "Cruise ship on the sea",
+      caption: "Luxury cruiser sailing across a calm blue sea with a faint city skyline."
+    },
+    {
+      src: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Cruise_ship_at_sea.jpg",
+      alt: "Cruise ship at sea at sunset",
+      caption: "Cruise ship at sea at sunset with gentle waves."
+    }
+  ];
+
+  const imgEl = document.getElementById("rotating-image");
+  const capEl = document.getElementById("rotating-caption");
+
+  let index = 0;
+  const DURATION_MS = 3000; // 3 seconds
+
+  function showSlide(i) {
+    const slide = slides[i];
+    imgEl.classList.add("fade-out");
+
+    // after fade-out, change image and caption
+    setTimeout(() => {
+      imgEl.src = slide.src;
+      imgEl.alt = slide.alt;
+      capEl.textContent = slide.caption;
+      imgEl.classList.remove("fade-out");
+    }, 400); // matches CSS transition
+  }
+
+  // Preload images for smoother transitions
+  slides.forEach(s => {
+    const im = new Image();
+    im.src = s.src;
+  });
+
+  // Auto-rotate every 3s
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, DURATION_MS);
+</script>
 
 
     
 
-  </div>
-</div>
-
 </body>
 </html>
+
 
 
 
