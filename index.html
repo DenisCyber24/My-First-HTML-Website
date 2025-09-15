@@ -247,23 +247,29 @@
   <img id="lightbox-img" src="" alt="">
 </div>
   
-<script>
 
-  // Target just the Boards of Trade image
-  const boardImg = document.querySelector('img[alt="Boards of Trade, 1937"]');
+<script>
+  // Lightbox for ALL gallery images
+  const galleryImages = document.querySelectorAll(".gallery-images img");
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
 
-  boardImg.addEventListener("click", () => {
-    lightbox.style.display = "flex";
-    lightboxImg.src = boardImg.src;
-    lightboxImg.alt = boardImg.alt;
+  galleryImages.forEach((img) => {
+    img.style.cursor = "zoom-in"; // visual hint (optional but nice)
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "";
+    });
   });
 
   // Close lightbox on click anywhere
   lightbox.addEventListener("click", () => {
     lightbox.style.display = "none";
+    lightboxImg.src = "";
+    lightboxImg.alt = "";
   });
+
 </script>
 
   <script>
@@ -362,6 +368,7 @@
   
 </body>
 </html>
+
 
 
 
