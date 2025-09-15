@@ -131,6 +131,27 @@
       border: 2px solid #ccc;
       border-radius: 6px;
     }
+/* Fullscreen overlay for enlarged images */
+#lightbox {
+  display: none;              /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8); /* dark background */
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border: 4px solid #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+    
   </style>
 </head>
 <body>
@@ -224,6 +245,25 @@
 
     
 <script>
+
+  // Target just the Boards of Trade image
+  const boardImg = document.querySelector('img[alt="Boards of Trade, 1937"]');
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  boardImg.addEventListener("click", () => {
+    lightbox.style.display = "flex";
+    lightboxImg.src = boardImg.src;
+    lightboxImg.alt = boardImg.alt;
+  });
+
+  // Close lightbox on click anywhere
+  lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+</script>
+
+  
   // Array of cruiser images
   const slides = [
     {
@@ -315,9 +355,13 @@
 
 
     
-
+<!-- Lightbox overlay -->
+<div id="lightbox" onclick="this.style.display='none'">
+  <img id="lightbox-img" src="" alt="">
+</div>
 </body>
 </html>
+
 
 
 
